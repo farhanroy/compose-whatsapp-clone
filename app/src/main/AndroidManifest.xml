@@ -10,14 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.WhatsappClone">
         <activity
-            android:name=".DetailActivity"
-            android:exported="true"
-            android:label="@string/title_activity_detail"
-            android:theme="@style/Theme.WhatsappClone.NoActionBar" />
-        <activity
             android:name=".HomeActivity"
             android:exported="true"
             android:label="@string/title_activity_home"
+            android:theme="@style/Theme.WhatsappClone.NoActionBar" />
+        <activity
+            android:name=".DetailActivity"
+            android:exported="true"
+            android:label="@string/title_activity_detail"
             android:theme="@style/Theme.WhatsappClone.NoActionBar" />
         <activity
             android:name=".MainActivity"

@@ -1,8 +1,11 @@
 package github.farhanroy.whatsappclone.composable
 
 import androidx.compose.foundation.layout.Row
-import androidx.compose.material.*
+import androidx.compose.material.Tab
+import androidx.compose.material.TabRow
+import androidx.compose.material.TabRowDefaults
 import androidx.compose.material.TabRowDefaults.tabIndicatorOffset
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -13,12 +16,12 @@ fun AppTabBar(
     modifier: Modifier = Modifier,
     children: @Composable (Modifier) -> Unit
 ) {
-    Row(modifier) {
-        children(
-            Modifier
-                .weight(1f)
-                .align(Alignment.CenterVertically)
-        )
+    Row(modifier){
+      children(
+          Modifier
+              .weight(1f)
+              .align(Alignment.CenterVertically)
+      )
     }
 }
 
@@ -32,20 +35,29 @@ fun AppTabs(
     TabRow(
         selectedTabIndex = tabSelected.ordinal,
         modifier = modifier,
-        indicator = { tabPositions ->
+        indicator = { tabIndicator ->
             TabRowDefaults.Indicator(
-                Modifier.tabIndicatorOffset(tabPositions[tabSelected.ordinal])
+                Modifier.tabIndicatorOffset(tabIndicator[tabSelected.ordinal])
             )
         },
         divider = {}
     ) {
-        titles.forEachIndexed { index, title ->
+        titles.forEachIndexed {index, title ->
             val selected = index == tabSelected.ordinal
             Tab(
-                text = {Text(title)},
+                text = { Text(text = title)},
                 selected = selected,
                 onClick = { onTabSelected(HomeTab.values()[index]) }
             )
         }
     }
 }
+
+
+
+
+
+
+
+
+

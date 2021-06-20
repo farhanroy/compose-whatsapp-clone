@@ -5,5 +5,5 @@ import androidx.compose.runtime.Composable
 
 @Composable
 fun ChatView() {
-    Text("asas")
+    Text("Chat View")
 }

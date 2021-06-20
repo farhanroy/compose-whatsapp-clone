@@ -14,13 +14,11 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import com.google.accompanist.pager.ExperimentalPagerApi
 import github.farhanroy.whatsappclone.composable.Center
 import github.farhanroy.whatsappclone.ui.theme.WhatsappCloneTheme
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
-@ExperimentalPagerApi
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -51,3 +49,8 @@ fun SplashView() {
         )
     }
 }
+
+
+
+
+
