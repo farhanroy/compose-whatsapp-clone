@@ -7,7 +7,6 @@ import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Call
-import androidx.compose.material.icons.filled.ThumbUp
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -36,7 +35,7 @@ fun CallView() {
 @Composable
 fun CallItem(call: Call) {
     Row(Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
-        Box(Modifier.weight(2f)){
+        Box(modifier = Modifier.weight(2f)) {
             Image(
                 painter = rememberCoilPainter(request = call.imageUrl),
                 contentDescription = null,
@@ -46,17 +45,15 @@ fun CallItem(call: Call) {
                 contentScale = ContentScale.Crop
             )
         }
-        Column(Modifier.padding(horizontal = 8.dp).weight(7f)) {
-            Text(
-                call.name,
-                maxLines = 1,
-                fontSize = 17.sp,
-                fontWeight = FontWeight.SemiBold
-            )
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-            ) {
-                if(call.isMissCall) {
+
+        Column(
+            Modifier
+                .padding(horizontal = 8.dp)
+                .weight(7f)
+        ) {
+            Text(text = call.name, maxLines = 1, fontSize = 17.sp, fontWeight = FontWeight.SemiBold)
+            Row(Modifier.fillMaxWidth()) {
+                if (call.isMissCall) {
                     Icon(
                         painter = painterResource(id = R.drawable.ic_call_miss),
                         contentDescription = null,
@@ -75,12 +72,24 @@ fun CallItem(call: Call) {
             Spacer(modifier = Modifier.height(14.dp))
             Divider(color = Color(0xFFebebeb))
         }
-        IconButton(onClick = { /*TODO*/ }, modifier = Modifier.weight(1f)) {
+        IconButton(onClick = { /*TODO*/ }) {
             Icon(
-                imageVector = Icons.Default.Call,
-                contentDescription = null,
+                imageVector = Icons.Default.Call, contentDescription = null,
                 tint = MaterialTheme.colors.primary
             )
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

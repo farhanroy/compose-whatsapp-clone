@@ -15,15 +15,15 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.accompanist.coil.rememberCoilPainter
-import github.farhanroy.whatsappclone.data.DummyData
 import github.farhanroy.whatsappclone.data.Chat
+import github.farhanroy.whatsappclone.data.DummyData
 
 @Composable
 fun ChatView() {
     val dummyChat = DummyData.listChat
 
     LazyColumn {
-        items(dummyChat.size) { index ->
+        items(dummyChat.size) {index ->
             ChatItem(dummyChat[index])
         }
     }
@@ -60,3 +60,23 @@ fun ChatItem(chat: Chat) {
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -22,7 +22,7 @@ import github.farhanroy.whatsappclone.R
 @Composable
 fun StatusView() {
     Row(Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
-        Box(Modifier.weight(2f)) {
+        Box(modifier = Modifier.weight(2f)) {
             Image(
                 painter = painterResource(id = R.drawable.ic_person),
                 contentDescription = null,
@@ -33,7 +33,7 @@ fun StatusView() {
                 contentScale = ContentScale.Crop
             )
             Icon(
-                Icons.Default.AddCircle,
+                imageVector = Icons.Default.AddCircle,
                 contentDescription = null,
                 tint = Color.Green,
                 modifier = Modifier.offset(x = 32.dp, y = 32.dp)
@@ -44,12 +44,7 @@ fun StatusView() {
                 .padding(horizontal = 8.dp)
                 .weight(8f)
         ) {
-            Text(
-                "Status saya",
-                maxLines = 1,
-                fontSize = 17.sp,
-                fontWeight = FontWeight.SemiBold
-            )
+            Text("Status saya", maxLines = 1, fontSize = 17.sp, fontWeight = FontWeight.SemiBold)
             Spacer(modifier = Modifier.height(6.dp))
             Text("Ketuk untuk menambah status", fontSize = 15.sp, color = Color.Gray)
         }

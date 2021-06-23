@@ -92,8 +92,11 @@ fun HomeView() {
                                 tint = Color.DarkGray
                             )
                         }
-                        Spacer(Modifier.height(16.dp))
-                        FloatingActionButton(onClick = { /*TODO*/ }, backgroundColor = Color.Green) {
+                        Spacer(modifier = Modifier.height(16.dp))
+                        FloatingActionButton(
+                            onClick = { /*TODO*/ },
+                            backgroundColor = Color.Green
+                        ) {
                             Icon(
                                 painter = painterResource(id = R.drawable.ic_camera),
                                 contentDescription = null,
@@ -116,7 +119,6 @@ fun HomeView() {
         modifier = Modifier.fillMaxSize()
     ) {
         Column(Modifier.fillMaxSize()) {
-
             HomeTabBar(
                 tabSelected,
                 onTabSelected = { tabSelected = it }
