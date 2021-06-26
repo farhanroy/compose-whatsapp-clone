@@ -18,6 +18,11 @@ data class Call(
     val isIncoming: Boolean,
 )
 
+data class Message(
+    val message: String,
+    val isPeer: Boolean
+)
+
 object DummyData {
     val listChat = listOf(
         Chat(
@@ -151,5 +156,15 @@ object DummyData {
             isIncoming = true,
             isMissCall = false
         )
+    )
+
+    val listMessage = listOf(
+        Message("Hi Roy how are you ?", false),
+        Message("Iam fine, how are you ?", true),
+        Message("Iam fine too", false),
+        Message("What do you do now ?", true),
+        Message("Write a book, and doing my work", false),
+        Message("Wow, its so good man", true),
+        Message("Yeah", false),
     )
 }

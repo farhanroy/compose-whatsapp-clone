@@ -1,6 +1,9 @@
 package github.farhanroy.whatsappclone.ui.view
 
+import android.content.Context
+import android.content.Intent
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.CircleShape
@@ -15,23 +18,31 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.google.accompanist.coil.rememberCoilPainter
+import github.farhanroy.whatsappclone.DetailActivity
 import github.farhanroy.whatsappclone.data.Chat
 import github.farhanroy.whatsappclone.data.DummyData
 
 @Composable
-fun ChatView() {
+fun ChatView(mContext: Context) {
     val dummyChat = DummyData.listChat
 
     LazyColumn {
-        items(dummyChat.size) {index ->
-            ChatItem(dummyChat[index])
+        items(dummyChat.size) { index ->
+            ChatItem(dummyChat[index], mContext)
         }
     }
 }
 
 @Composable
-fun ChatItem(chat: Chat) {
-    Row(Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
+fun ChatItem(chat: Chat, mContext: Context) {
+    Row(
+        Modifier
+            .padding(horizontal = 16.dp, vertical = 8.dp)
+            .clickable {
+                val intent = Intent(mContext, DetailActivity::class.java)
+                intent.putExtra("extra_chatid", chat.id)
+                mContext.startActivity(intent)
+            }) {
         Image(
             painter = rememberCoilPainter(request = chat.imageUrl),
             contentDescription = null,

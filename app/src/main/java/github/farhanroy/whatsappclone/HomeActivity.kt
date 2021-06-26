@@ -1,5 +1,6 @@
 package github.farhanroy.whatsappclone
 
+import android.content.Context
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -31,7 +32,7 @@ class HomeActivity : ComponentActivity() {
             WhatsappCloneTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
-                    HomeView()
+                    HomeView(this)
                 }
             }
         }
@@ -39,7 +40,7 @@ class HomeActivity : ComponentActivity() {
 }
 
 @Composable
-fun HomeView() {
+fun HomeView(mContext: Context) {
     var showMenu by remember { mutableStateOf(false) }
     var tabSelected by remember { mutableStateOf(HomeTab.CHAT) }
     Scaffold(
@@ -124,7 +125,7 @@ fun HomeView() {
                 onTabSelected = { tabSelected = it }
             )
             when (tabSelected) {
-                HomeTab.CHAT -> ChatView()
+                HomeTab.CHAT -> ChatView(mContext)
                 HomeTab.STATUS -> StatusView()
                 HomeTab.CALL -> CallView()
             }
